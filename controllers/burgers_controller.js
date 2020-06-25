@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
   
   router.post("/api/burgers", function(req, res) {
     burger.create([
-      "burgers_name", "devoured"
+      "burgers_name"
     ], [
       req.body.burgers_name, req.body.devoured
     ], function(result) {
@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
       } else {
         res.status(200).end();
       }
-    });
+    }); 
   });
   
   router.delete("/api/burgers/:id", function(req, res) {

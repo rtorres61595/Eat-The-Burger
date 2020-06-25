@@ -1,3 +1,3 @@
-INSERT INTO burgers (name) VALUES ('Big Mac');
-INSERT INTO burgers (name) VALUES ('cheese burger');
-INSERT INTO burgers (name) VALUES ('heart attack');
+INSERT INTO burgers (name, devoured) VALUES ('Big Mac', FALSE);
+INSERT INTO burgers (name, devoured) VALUES ('cheese burger', FALSE);
+INSERT INTO burgers (name, devoured) VALUES ('heart attack', FALSE);
