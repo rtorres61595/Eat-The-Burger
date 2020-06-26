@@ -5,7 +5,10 @@
 <ul>
     {{#each burgers}}
     {{#unless devoured}}
-    {{> burgers/burgers_name devoured=true}}
+    <li>
+        {{burgers_name}} 
+        <button class="eat-burger"  data-id="{{id}}" >EAT</button>
+    </li>
     {{/unless}}
     {{/each}}
 </ul>
@@ -14,32 +17,24 @@
 
 <ul>
     {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burgers_name devoured=false}}
-    {{/unless}}
+    {{#if devoured}}
+    <li>
+        {{burgers_name}}   
+         <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+
+    </li>
+    {{/if}}
     {{/each}}
 </ul>
 
 <h2>Add a burger</h2>
-<form action="/api/burgers" method="POST" class="create-form">
+<form id="post-burger">
 
     <div class="form-group">
         <label for="burgers">burger Name:</label>
-        <input type="text" class="form-control" id="enter-text" name="burger_name">
+        <input type="text" class="form-control" id="add-burger" name="burger_name">
     </div>
 
     <button type="submit">Add burger</button>
+
 </form>
-
-
-
-
-<li>
-    {{burgers_name}}
-
-    <button class="eat-burger" data-id="{{id}}" data-devoured="{{devoured}}">
-        {{#if devoured}}yum!{{else}}ew dude!{{/if}}
-    </button>
-
-    <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li>
