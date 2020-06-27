@@ -1,3 +1,6 @@
+<div class="container">
+
+    <div class="jumbotron">
 <h1>Eat dah Burger!</h1>
 
 <h2>DAH burgers!</h2>
@@ -7,7 +10,7 @@
     {{#unless devoured}}
     <li>
         {{burgers_name}} 
-        <button class="eat-burger"  data-id="{{id}}" >EAT</button>
+        <button class="eat-burger" id="leftside" data-id="{{id}}" >EAT</button>
     </li>
     {{/unless}}
     {{/each}}
@@ -20,14 +23,14 @@
     {{#if devoured}}
     <li>
         {{burgers_name}}   
-         <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+         <button class="delete-burger" id="rightside" data-id="{{this.id}}">DELETE!</button>
 
     </li>
     {{/if}}
     {{/each}}
 </ul>
 
-<h2>Add a burger</h2>
+<h2 id="newburger">Add a burger</h2>
 <form id="post-burger">
 
     <div class="form-group">
@@ -35,6 +38,6 @@
         <input type="text" class="form-control" id="add-burger" name="burger_name">
     </div>
 
-    <button type="submit">Add burger</button>
+    <button type="submit" id="button">Add burger</button>
 
 </form>
